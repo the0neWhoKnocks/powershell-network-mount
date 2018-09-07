@@ -1,17 +1,22 @@
 # Powershell Network Mount
 
-A powershell script with a flat UI that'll mount network drives and give feedback on success or error.
+A Powershell script with a flat UI that'll mount network drives and give feedback on success or error.
 
 ---
 
-## Notes
+## Usage
 
-In order for PowerShell scripts to run on startup you'll have to start a
-PowerShell terminal with Admin rights. Then type `Set-ExecutionPolicy RemoteSigned`,
-and choose `All`.
-
-On Windows 10 you can type Win+R to open a Run dialog, then type `shell:startup`
-to access the Startup directory where you can drop a shortcut to the script.
+- Right-click the `mountNAS.ps1` file and choose **Create shortcut**
+- Right-click the new shortcut and go to **Properties**
+- In the `Target` field, surround the current path with double quotes, and
+  prepend that path with `powershell.exe -ExecutionPolicy Bypass -File `, so
+  that you end up with something like:
+  ```
+  powershell.exe -ExecutionPolicy Bypass -File "D:\powershell-network-mount\mountNAS.ps1"
+  ```
+- In the `Run` dropdown, select `Minimized`.
+- Then (on Windows 10), type `Win+R` to open a Run dialog, then type 
+  `shell:startup` to open the Startup directory and move the shortcut there.
 
 ---
 
